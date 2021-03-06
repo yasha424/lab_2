@@ -117,6 +117,6 @@ int number(ifstream &current_file){
 //функция записи в файл
 void write_in_file(ofstream &result_file){
   for (size_t i = 0; i < 10; i++) {
-    result_file << countries[i].name << "," << countries[i].points << endl;
+    result_file << i+1 << "," << countries[i].name << "," << countries[i].points << endl;
   }
 }
