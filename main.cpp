@@ -28,6 +28,7 @@ int main()
   ifstream current_file;
   ofstream result_file;
   string path;
+  cout << "Please, enter the directory path:" << endl;
   cin >> path;
   result_file.open(path + "result.csv");
   vector <string> file_names;
