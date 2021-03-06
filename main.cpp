@@ -51,13 +51,16 @@ void do_the_stuff(ifstream &current_file){
     countries.push_back(work_with_line(current_line));
   }
 }
-
-Country work_with_line(string current_line){
-  // сюда надо шо-то пихнуть
+Country work_with_line(string current_line) {
+    Country currContry;
+    currContry.name = word_before_comma(current_line);
+    while (current_line.size() != 0) {
+        string word = word_before_comma(current_line);
+    }
 }
-string word_before_comma(string word) {}
-int number(ifstream &current_file){
-  string str;
-  getline(current_file, str);
-  return stoi(str);
+string word_before_comma(string &word) {
+    int pos = word.find(",");
+    string subword = word.substr(0, pos);
+    word = word.substr(pos+1);
+    return subword;
 }
