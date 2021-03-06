@@ -7,7 +7,8 @@ using namespace std;
 using namespace filesystem;
 void do_the_stuff(ifstream &current_file);
 int number(ifstream &current_file);
-
+string word_before_comma(string word);
+Country work_with_line(string current_line);
 struct Country{
   string name;
   int marks[20];
@@ -54,7 +55,7 @@ void do_the_stuff(ifstream &current_file){
 Country work_with_line(string current_line){
   // сюда надо шо-то пихнуть
 }
-
+string word_before_comma(string word) {}
 int number(ifstream &current_file){
   string str;
   getline(current_file, str);
