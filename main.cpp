@@ -12,7 +12,7 @@ struct Country{
   string name;
   int marks[20];
   int points;
-}
+};
 
 vector <Country> countries;
 
@@ -45,9 +45,14 @@ void do_the_stuff(ifstream &current_file){
   for (size_t i = 0; i < numb; i++) {
     getline(current_file, current_line);
     //cout << str << endl;
-    string country_name = current_line.substr(0, current_line.find(','));
-    cout << country_name << endl;
+    // string country_name = current_line.substr(0, current_line.find(','));
+    // cout << country_name << endl;
+    countries.push_back(work_with_line(current_line));
   }
+}
+
+Country work_with_line(string current_line){
+  // сюда надо шо-то пихнуть
 }
 
 int number(ifstream &current_file){
