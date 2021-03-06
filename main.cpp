@@ -34,7 +34,7 @@ int main()
   vector <string> file_names;
   for (const auto & entry : directory_iterator(path))
     if (entry.path().extension() == ".csv"){
-      file_names.push_back(entry.path());
+      file_names.push_back(entry.path().string());
     }
   for (size_t i = 0; i < file_names.size(); i++) {
     current_file.open(file_names[i]);
@@ -47,6 +47,7 @@ int main()
   points_adder();
   sort_last_time();
   write_in_file(result_file);
+  result_file.close();
 }
 
 // функция, которая делает всю работу xD
