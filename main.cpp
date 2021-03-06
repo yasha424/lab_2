@@ -62,9 +62,9 @@ Country work_with_line(string current_line) {
     }
     return currCountry;
 }
-string word_before_comma(string &word) {
-    int pos = word.find(",");
-    string subword = word.substr(0, pos);
-    word = word.substr(pos+1);
-    return subword;
+
+int number(ifstream &current_file){
+  string str;
+  getline(current_file, str);
+  return stoi(str);
 }
