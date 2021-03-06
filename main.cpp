@@ -5,7 +5,7 @@
 #include <fstream>
 #include <stdlib.h>
 using namespace std;
-using namespace std::filesystem;
+namespace fs = std::filesystem;
 
 struct Country{
   string name;
@@ -29,7 +29,7 @@ int main()
   cin >> path;
   result_file.open(path + "result.csv");
   vector <string> file_names;
-  for (const auto & entry : directory_iterator(path))
+  for (const auto & entry : fs::directory_iterator(path))
     if (entry.path().extension() == ".csv"){
       //cout << entry.path() << endl;
       file_names.push_back(entry.path());
