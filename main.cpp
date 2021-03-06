@@ -55,6 +55,12 @@ void do_the_stuff(ifstream &current_file){
     countries.push_back(work_with_line(current_line));
   }
 }
+string word_before_comma(string &word) {
+    int pos = word.find(",");
+    string subword = word.substr(0, pos);
+    word = word.substr(pos+1);
+    return subword;
+}
 Country work_with_line(string current_line) {
     Country currCountry;
     currCountry.name = word_before_comma(current_line);
@@ -64,12 +70,6 @@ Country work_with_line(string current_line) {
         currCountry.marks[i] = atoi(word.c_str());
     }
     return currCountry;
-}
-string word_before_comma(string &word) {
-    int pos = word.find(",");
-    string subword = word.substr(0, pos);
-    word = word.substr(pos+1);
-    return subword;
 }
 void sort(){
   int points[] = {12, 10, 8, 7, 6, 5, 4, 3, 2, 1};
