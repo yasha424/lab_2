@@ -12,7 +12,7 @@ struct Country{
   string name;
   int marks[20];
   int points;
-}
+};
 
 vector <Country> countries;
 
