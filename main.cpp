@@ -65,6 +65,22 @@ Country work_with_line(string current_line) {
     return currCountry;
 }
 
+void sort(){
+  int points[] = {12, 10, 8, 7, 6, 5, 4, 3, 2, 1};
+  for (size_t i = 0; i < countries.size(); i++) {
+    for (size_t j = 0; j < countries.size() - 1; j++) {
+      for (size_t k = 0; k < countries.size() - 1; k++) {
+        if (countries[i].marks[k] < countries[i].marks[k+1]) {
+          swap(countries[i].marks[k], countries[i].marks[k+1]);
+        }
+      }
+    }
+    for (size_t i = 0; i < 10; i++) {
+      countries[j].points += points[i];
+    }
+  }
+}
+
 int number(ifstream &current_file){
   string str;
   getline(current_file, str);
