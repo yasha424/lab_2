@@ -15,7 +15,7 @@ struct Country{
 
 void do_the_stuff(ifstream &current_file);
 int number(ifstream &current_file);
-string word_before_comma(string word);
+string word_before_comma(string &word);
 Country work_with_line(string current_line);
 void sort();
 
