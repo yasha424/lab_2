@@ -20,6 +20,7 @@ Country work_with_line(string current_line);
 void sort();
 void cout_all_struct();
 void sort_last_time();
+void write_in_file(ofstream &result_file);
 
 
 vector <Country> countries;
@@ -48,6 +49,7 @@ int main()
   sort();
   sort_last_time();
   cout_all_struct();
+  write_in_file(result_file);
 }
 
 void do_the_stuff(ifstream &current_file){
@@ -115,5 +117,11 @@ int number(ifstream &current_file){
 void cout_all_struct(){
   for (size_t i = 0; i < countries.size(); i++) {
     cout << countries[i].name << "  " << countries[i].points << endl;
+  }
+}
+
+void write_in_file(ofstream &result_file){
+  for (size_t i = 0; i < 10; i++) {
+    result_file << countries[i].name << "," << countries[i].points << endl;
   }
 }
