@@ -3,6 +3,7 @@
 #include <filesystem>
 #include <vector>
 #include <fstream>
+#include <stdlib.h> 
 using namespace std;
 using namespace filesystem;
 void do_the_stuff(ifstream &current_file);
@@ -52,11 +53,14 @@ void do_the_stuff(ifstream &current_file){
   }
 }
 Country work_with_line(string current_line) {
-    Country currContry;
-    currContry.name = word_before_comma(current_line);
-    while (current_line.size() != 0) {
+    Country currCountry;
+    currCountry.name = word_before_comma(current_line);
+    currCountry.points = 0;
+    for (int i = 0; i < 20; i++) {
         string word = word_before_comma(current_line);
+        currCountry.marks[i] = atoi(word.c_str());
     }
+    return currCountry;
 }
 string word_before_comma(string &word) {
     int pos = word.find(",");
