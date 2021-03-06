@@ -5,18 +5,19 @@
 #include <fstream>
 #include <stdlib.h>
 using namespace std;
-using namespace filesystem;
-void do_the_stuff(ifstream &current_file);
-int number(ifstream &current_file);
-string word_before_comma(string word);
-Country work_with_line(string current_line);
-void sort();
+using namespace std::filesystem;
 
 struct Country{
   string name;
   int marks[20];
   int points;
 };
+
+void do_the_stuff(ifstream &current_file);
+int number(ifstream &current_file);
+string word_before_comma(string word);
+Country work_with_line(string current_line);
+void sort();
 
 vector <Country> countries;
 
@@ -75,8 +76,8 @@ void sort(){
         }
       }
     }
-    for (size_t i = 0; i < 10; i++) {
-      countries[j].points += points[i];
+    for (size_t l = 0; l < 10; l++) {
+      countries[i].points += points[l];
     }
   }
 }
