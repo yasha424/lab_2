@@ -1,11 +1,8 @@
 #include "lib.h"
 
-
 int main()
 {
-
   vector <Country> countries;
-
   ifstream current_file;
   ofstream result_file;
   string path;
@@ -30,5 +27,3 @@ int main()
   write_in_file(result_file, countries);
   result_file.close();
 }
-
-// функция, которая делает всю работу xD
