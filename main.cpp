@@ -4,7 +4,7 @@
 #include <vector>
 #include <fstream>
 using namespace std;
-using namespace filesystem;
+using namespace std::__fs::filesystem;
 
 struct Country{
   string name;
@@ -62,9 +62,18 @@ void do_the_stuff(ifstream &current_file){
 
 //функция, которая возвращает слово, разделенное запятой
 string word_before_comma(string &word) {
+  string subword;
+  if (word[0] == '\"') {
+    int pos = word.find('\"', 1);
+    subword = word.substr(0, pos+1);
+    word = word.substr(pos+2);
+  }
+  else{
     int pos = word.find(",");
-    string subword = word.substr(0, pos);
+    subword = word.substr(0, pos);
     word = word.substr(pos+1);
+
+  }
     return subword;
 }
 
