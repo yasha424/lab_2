@@ -66,7 +66,8 @@ string word_before_comma(string &word) {
   if (word[0] == '\"') {
     int pos = word.find('\"', 1);
     subword = word.substr(0, pos+1);
-    word = word.substr(pos+2);
+    int comma = word.find(',', pos);
+    word = word.substr(comma+1);
   }
   else{
     int pos = word.find(",");
